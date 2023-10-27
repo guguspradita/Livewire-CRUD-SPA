@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Str;
+use App\Models\Post;
 
 class Posts extends Component
 {
@@ -24,7 +25,7 @@ class Posts extends Component
 
     public function render()
     {
-        $posts = Posts::latest()->get();
+        $posts = Post::latest()->get();
         return view('livewire.posts', compact('posts'));
     }
 
@@ -39,7 +40,7 @@ class Posts extends Component
     {
         $this->validate();
         try {
-            Posts::create([
+            Post::create([
                 'title' => $this->title,
                 'content' => $this->content,
                 'status' => $this->status,
@@ -57,7 +58,7 @@ class Posts extends Component
     public function edit($id)
     {
         try {
-            $post = Posts::findOrFail($id);
+            $post = Post::findOrFail($id);
             if (!$post) {
                 session()->flash('error', 'Post not found');
             } else {
@@ -77,7 +78,7 @@ class Posts extends Component
     {
         $this->validate();
         try {
-            Posts::whereId($this->postId)->update([
+            Post::whereId($this->postId)->update([
                 'title' => $this->title,
                 'content' => $this->content,
                 'status' => $this->status,
@@ -101,7 +102,7 @@ class Posts extends Component
     public function destroy($id)
     {
         try {
-            Posts::find($id)->delete();
+            Post::find($id)->delete();
             session()->flash('success', "Post Deleted Successfully!!");
         } catch (\Exception $e) {
             session()->flash('error', "Something goes wrong!!");

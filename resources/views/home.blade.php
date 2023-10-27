@@ -20,7 +20,7 @@
     </nav>
     <div class="container">
         <div class="row justify-content-center mt-3">
-            @livewire('post')
+            @livewire('posts')
         </div>
     </div>
 
