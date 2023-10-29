@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Livewire</a>
+            <a class="navbar-brand" href="/">Livewire - biasalah coba-caba</a>
         </div>
     </nav>
     <div class="container">
