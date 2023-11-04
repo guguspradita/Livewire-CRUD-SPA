@@ -22,6 +22,11 @@
         <div class="row justify-content-center mt-3">
             @livewire('posts')
         </div>
+
+        <div class="mt-4">
+            <x-alert type='danger' message="Ini adalah Component Alert" />
+            <x-table :dataTable='$component' />
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
